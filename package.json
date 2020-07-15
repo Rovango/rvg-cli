@@ -10,6 +10,9 @@
   ],
   "author": "Rovango",
   "license": "ISC",
+  "bin": {
+    "rvg-cli": "bin/index.js"
+  },
   "scripts": {
     "test": "istanbul cover ./node_modules/.bin/_mocha",
     "eslint": "eslint ./lib --fix",
@@ -20,6 +23,9 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "gitHooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -32,10 +38,10 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "glob-all": "^3.2.1",
-    "husky": "^4.2.5",
     "istanbul": "^0.4.5",
     "mocha": "^8.0.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "yorkie": "^2.0.0"
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",
