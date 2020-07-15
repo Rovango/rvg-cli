@@ -1,24 +1,38 @@
 {
-  "name": "rovango-builder",
-  "version": "1.0.0",
+  "name": "rvg-cli",
+  "version": "0.0.1",
   "main": "index.js",
-  "description": "",
-  "keywords": [],
-  "author": "",
+  "description": "a front-end cli for creating and maintain multi project",
+  "keywords": [
+    "fe",
+    "cli",
+    "multi projects"
+  ],
+  "author": "Rovango",
   "license": "ISC",
   "scripts": {
     "test": "istanbul cover ./node_modules/.bin/_mocha",
     "eslint": "eslint ./lib --fix",
-    "smoke": "node test/smoke/index.js"
+    "smoke": "node test/smoke/index.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "assert": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.34",
     "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "glob-all": "^3.2.1",
+    "husky": "^4.2.5",
     "istanbul": "^0.4.5",
     "mocha": "^8.0.1",
     "rimraf": "^3.0.2"
